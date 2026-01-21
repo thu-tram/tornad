@@ -1,4 +1,3 @@
-*.epub
 epub.css
 fetch-images.py
 Makefile
