@@ -1,45 +1,91 @@
-# `doc_nhanh`
+# Tornad
 
-Công cụ giúp mình tải các bài viết trên Internet mình muốn đọc và gói thành EPUB.
+Lưu trữ lại toàn bộ bài viết của Tornad từ Spiderum.
 
-Cần có [`pandoc`](https://github.com/jgm/pandoc), [`papeer`](https://github.com/lapwat/papeer).
+Tải [bản EPUB để đọc trên máy đọc sách](tornad.epub).
 
-Setup này tôi dùng trên Linux (Debian 13) nên không biết là có hỗ trợ tốt trên MacOS hay Windows này kia không đâu nhé :>.
+## Danh sách bài viết
 
-## Cách dùng
-
-Thêm các tệp Markdown (`.md`) vào trong thư mục `content/` rồi chạy lệnh `make` trên thư mục đó là xong. À nhớ chỉnh sửa tệp `metadata.yaml` nhé (Kiểu thông tin sách này kia thôi chứ không có gì đâu).
-
-### Tự thêm tệp
-
-Các bác có thể tải bài viết từ trình duyệt về bằng cách sử dụng [MarkDownload - Markdown Web Clipper](https://github.com/deathau/markdownload) (Không còn dùng được trên Google Chrome nữa rồi thì phải).
-
-### Tải tự động toàn bộ các bài viết
-
-Bước 1: Tạo tệp `links.txt`
-
-Bước 2: Cho hết links bài viết các bác muốn đọc vào đấy, à mà nếu được thì bác để một dòng trống ở cuối tệp nhé. Kiểu như thế này
-
-```
-https://vi-du1.com
-https://vi-du2.com
-
-# Để một dòng trống không ở cuối tệp links.txt nhé.
-```
-
-Bước 3: Chạy lệnh sau (nhớ tải `papeer` nhé). Để tệp `links.txt` trong thư mục `content/` rồi chạy trong đó.
-
-```bash
-while read p; do papeer get "$p"; done <links.txt
-```
-
-Bước 4: Tải xong rồi thì chạy giúp tôi lệnh sau:
-
-```bash
-for i in content/*.md; do python3 fetch-images.py "$i"; done
-```
-
-Tải xong hết ảnh rồi thì sẽ có thư mục `assets/` trong thư mục `content/`, mấy ông ném thư mục `assets/` ra root folder (cùng với `Makefile`) là được nhé.
-
-Bước 5: Chạy lệnh `make` để gói `.epub` là xong.
-
+- [Trái bóng đại diện cho lòng tự hào dân tộc ?](content/trai-bong-ai-dien-cho-long-tu-hao-dan-toc.md)
+- [[Homo Scachorum] Spassky & Fischer: Hai quân Tốt trên bàn cờ Chiến tranh Lạnh](content/homo-scachorum-spassky-fischer-hai-quan-tot-tren-ban-co-chien-tranh-lanh.md)
+- [[Homo Scachorum] Cờ vua trong mối tương quan với tính lập dị, bệnh tâm thần, và hành động tự sát](content/homo-scachorum-co-vua-trong-moi-tuong-quan-voi-tinh-lap-di-benh-tam-than-va-hanh-ong-tu-sat.md)
+- [Nghệ thuật thì vô dụng, bạn ngu thì do bạn](content/nghe-thuat-thi-vo-dung-ban-ngu-thi-do-ban.md)
+- [[Nhìn lại năm cũ] Về việc viết sách, tư duy hướng thượng, và bầy chó lạc](content/nhin-lai-nam-cu-ve-viec-viet-sach-tu-duy-huong-thuong-va-bay-cho-lac.md)
+- [Hiệu ứng Dunning-Kruger: Bị hiểu sai, lạm dụng, nguỵ tạo đồ thị, và có thể không thực sự có thật](content/hieu-ung-dunning-kruger-bi-hieu-sai-lam-dung-nguy-tao-o-thi-va-co-the-khong-thuc-su-co-that.md)
+- [Spoil hay không spoil, đó không phải vấn đề](content/spoil-hay-khong-spoil-o-khong-phai-van-e.md)
+- [Bàn về những niềm tin ngây ngô của Tử Vi](content/ban-ve-nhung-niem-tin-ngay-ngo-cua-tu-vi.md)
+- [Chester Bennington: Những tâm hồn mỏng manh trong thế giới Rock đầy gai góc](content/chester-bennington-nhung-tam-hon-mong-manh-trong-the-gioi-rock-ay-gai-goc.md)
+- [Phê bình giả thuyết Khu rừng Đen tối trong bộ Chuyện cũ Trái Đất của Lưu Từ Hân](content/phe-binh-gia-thuyet-khu-rung-en-toi-trong-bo-chuyen-cu-trai-at-cua-luu-tu-han.md)
+- [Trào lưu sửa Nữ hoàng Anh thành Nữ vương Anh: Nhìn từ góc độ lí thuyết dịch thuật](content/trao-luu-sua-nu-hoang-anh-thanh-nu-vuong-anh-nhin-tu-goc-o-li-thuyet-dich-thuat.md)
+- [Dịch sát và dịch thoát – Atrée và Thyeste trong lịch sử lí thuyết dịch thuật](content/dich-sat-va-dich-thoat-atree-va-thyeste-trong-lich-su-li-thuyet-dich-thuat.md)
+- [De Profundis: 123 năm trước, một trong những lá thư tình vĩ đại nhất mà loài người từng viết ra đời](content/de-profundis-123-nam-truoc-mot-trong-nhung-la-thu-tinh-vi-ai-nhat-ma-loai-nguoi-tung-viet-ra-oi.md)
+- [[Nhìn lại năm cũ] Về nguyên tắc viết trong thời kì phá huỷ do sáng tạo](content/nhin-lai-nam-cu-ve-nguyen-tac-viet-trong-thoi-ki-pha-huy-do-sang-tao.md)
+- [Sự trỗi dậy của bầy hề, hay bi kịch của xã hội giải trí hoá](content/su-troi-day-cua-bay-he-hay-bi-kich-cua-xa-hoi-giai-tri-hoa.md)
+- [Chủ nghĩa dân tộc ẩm thực: Sự trớ trêu của ngạn ngữ “Bạn là cái mà bạn ăn”](content/chu-nghia-dan-toc-am-thuc-su-tro-treu-cua-ngan-ngu-ban-la-cai-ma-ban-an.md)
+- [Cờ vua và những triết lí được nhìn từ lỗ đồng xu](content/co-vua-va-nhung-triet-li-uoc-nhin-tu-lo-ong-xu.md)
+- [“Trông Anh Ngược” hay sự dị hợm của văn hoá Anti-fandom](content/trong-anh-nguoc-hay-su-di-hom-cua-van-hoa-anti-fandom.md)
+- [Khoe sách: Căn bệnh tâm thần bái vật](content/khoe-sach-can-benh-tam-than-bai-vat.md)
+- [Alpha wolf: Huyễn tưởng về sói đầu đàn](content/alpha-wolf-huyen-tuong-ve-soi-au-an.md)
+- [Lòng yêu nước: Truyền thống ngàn đời hay truyền thống tân tạo?](content/long-yeu-nuoc-truyen-thong-ngan-oi-hay-truyen-thong-tan-tao.md)
+- [Kinh điển là gì, và nếu vậy, thì như thế nào?](content/kinh-ien-la-gi-va-neu-vay-thi-nhu-the-nao.md)
+- [Nhìn lại năm cũ: Về việc tối ưu hoá việc viết](content/nhin-lai-nam-cu-ve-viec-toi-uu-hoa-viec-viet.md)
+- [Cữ Việt xôq kần sửa, điều cần sửa là cả tiếng Việt](content/cu-viet-xoq-kan-sua-ieu-can-sua-la-ca-tieng-viet.md)
+- [Cộng đồng Chúa Nhẫn đã phản lại ý chí Tolkien như thế nào](content/cong-ong-chua-nhan-a-phan-lai-y-chi-tolkien-nhu-the-nao.md)
+- [Sự đói khát thứ văn xuôi tai, hay là không phải cứ biết chữ thì đọc được văn chương](content/su-oi-khat-thu-van-xuoi-tai-hay-la-khong-phai-cu-biet-chu-thi-oc-uoc-van-chuong.md)
+- [Nếu không muốn tư duy tồi thì đừng tư duy theo tiếng Việt](content/neu-khong-muon-tu-duy-toi-thi-ung-tu-duy-theo-tieng-viet.md)
+- [[Homo Scachorum] Sự vấy bẩn của chủ nghĩa dân tộc lên cờ vua](content/homo-scachorum-su-vay-ban-cua-chu-nghia-dan-toc-len-co-vua.md)
+- [Giày đen tất trắng – đừng làm nô lệ cho các nguyên tắc](content/giay-en-tat-trang-ung-lam-no-le-cho-cac-nguyen-tac.md)
+- [Cờ tướng, Cơ Thiếu Hoàng, và hạng người phản trí thức](content/co-tuong-co-thieu-hoang-va-hang-nguoi-phan-tri-thuc.md)
+- [Tôn vinh tiếng Việt không có nghĩa là tâng bốc nó dựa trên dối trá](content/ton-vinh-tieng-viet-khong-co-nghia-la-tang-boc-no-dua-tren-doi-tra.md)
+- [Chúa tể những chiếc Nhẫn: Khác biệt giữa phim và sách](content/chua-te-nhung-chiec-nhan-khac-biet-giua-phim-va-sach.md)
+- [Lược sử bóng đá: Từ công cụ của thực dân đến công cụ của chủ nghĩa dân tộc](content/luoc-su-bong-a-tu-cong-cu-cua-thuc-dan-en-cong-cu-cua-chu-nghia-dan-toc.md)
+- [[Homo Scachorum] Paul Morphy dưới góc nhìn Phân tâm học (Phần 4/4)](content/homo-scachorum-paul-morphy-duoi-goc-nhin-phan-tam-hoc-phan-44.md)
+- ["Tự biết mình" chưa bao giờ là mục đích cho nền giáo dục của chúng ta](content/tu-biet-minh-chua-bao-gio-la-muc-ich-cho-nen-giao-duc-cua-chung-ta.md)
+- [Ngày Quốc tế Phụ nữ: Một hình thức của nghi lễ nổi loạn](content/ngay-quoc-te-phu-nu-mot-hinh-thuc-cua-nghi-le-noi-loan.md)
+- [PrayforLaos hay #PrayforThai? Thôi thì Ăn không được, phá cho hôi](content/prayforlaos-hay-prayforthai-thoi-thi-an-khong-uoc-pha-cho-hoi.md)
+- [Bóng đá ở Việt Nam: Từ công cụ của thực dân đến công cụ của chủ nghĩa dân tộc](content/bong-a-o-viet-nam-tu-cong-cu-cua-thuc-dan-en-cong-cu-cua-chu-nghia-dan-toc.md)
+- [Để tự sỉ thành tự hào? Hãy gán cho chúng một cái tên](content/e-tu-si-thanh-tu-hao-hay-gan-cho-chung-mot-cai-ten.md)
+- [Nghệ thuật Khoá mõm: Đánh giá chức năng Block mới, và cách để nâng tầm nó thành nghệ thuật](content/nghe-thuat-khoa-mom-anh-gia-chuc-nang-block-moi-va-cach-e-nang-tam-no-thanh-nghe-thuat.md)
+- [Bức hoạ Dorian Gray: Khi vẻ đẹp không nằm ở nội dung câu chuyện (Phần 1/2)](content/buc-hoa-dorian-gray-khi-ve-ep-khong-nam-o-noi-dung-cau-chuyen-phan-12.md)
+- [Từ thiện lên đồng: Bi kịch của một xã hội Philistine](content/tu-thien-len-ong-bi-kich-cua-mot-xa-hoi-philistine.md)
+- [Cốt tuỷ của văn hoá đọc nằm ở sự không đọc](content/cot-tuy-cua-van-hoa-oc-nam-o-su-khong-oc.md)
+- [Tử vi đẩu số: Hoặc vô dụng hoặc lừa mị](content/tu-vi-au-so-hoac-vo-dung-hoac-lua-mi.md)
+- [Quốc gia dân tộc và sự tương đồng của nó với Tôn giáo vật tổ](content/quoc-gia-dan-toc-va-su-tuong-ong-cua-no-voi-ton-giao-vat-to.md)
+- [[Homo Scachorum] Một công cụ dạy đủ thứ trên đời mang tên cờ vua](content/homo-scachorum-mot-cong-cu-day-u-thu-tren-oi-mang-ten-co-vua.md)
+- [Nhân danh công lí, hãy tôn sùng bạo lực và tôn vinh thảo khấu](content/nhan-danh-cong-li-hay-ton-sung-bao-luc-va-ton-vinh-thao-khau.md)
+- [[Nhìn lại năm cũ] Về Chọc chó Online](content/nhin-lai-nam-cu-ve-choc-cho-online.md)
+- [Phi nhân hoá: Vì một thế giới mạng tươi đẹp hơn!](content/phi-nhan-hoa-vi-mot-the-gioi-mang-tuoi-ep-hon.md)
+- [Cửa hiệu Tự sát – chúng ta còn lại gì nếu đã khai tử Thượng đế?](content/cua-hieu-tu-sat-chung-ta-con-lai-gi-neu-a-khai-tu-thuong-e.md)
+- [Vấn nạn mù chữ: Nghịch lí của thời đại giao tiếp bằng chữ viết](content/van-nan-mu-chu-nghich-li-cua-thoi-ai-giao-tiep-bang-chu-viet.md)
+- [Bức hoạ Dorian Gray: Khi vẻ đẹp không nằm ở nội dung câu chuyện (Phần 2/2)](content/buc-hoa-dorian-gray-khi-ve-ep-khong-nam-o-noi-dung-cau-chuyen-phan-22.md)
+- [[Homo Scachorum] Khám nghiệm tâm lí Bobby Fischer (Phần 1/2), Joseph G. Ponterotto, Nguyễn Tuấn Linh dịch](content/homo-scachorum-kham-nghiem-tam-li-bobby-fischer-phan-12-joseph-g-ponterotto-nguyen-tuan-linh-dich.md)
+- [Phiên âm tên và Mặc cảm Ngôn ngữ của người trẻ (Phần 2: Nguyên nhân & khắc phục)](content/phien-am-ten-va-mac-cam-ngon-ngu-cua-nguoi-tre-phan-2-nguyen-nhan-khac-phuc.md)
+- [World Cup 2022: Bữa tiệc trên hình thể phụ nữ?](content/world-cup-2022-bua-tiec-tren-hinh-the-phu-nu.md)
+- [Thịt chó ở Việt Nam: Hồi cáo chung của văn hoá dã man](content/thit-cho-o-viet-nam-hoi-cao-chung-cua-van-hoa-da-man.md)
+- [Dịch tên riêng: Dịch? Hay là không dịch? Hay là chú thích?](content/dich-ten-rieng-dich-hay-la-khong-dich-hay-la-chu-thich.md)
+- [[Homo Scachorum] Đạo đức trong cờ vua, Benjamin Franklin, Nguyễn Tuấn Linh dịch và giới thiệu](content/homo-scachorum-ao-uc-trong-co-vua-benjamin-franklin-nguyen-tuan-linh-dich-va-gioi-thieu.md)
+- [[Nhìn lại năm cũ] Về việc viết một Spidessay](content/nhin-lai-nam-cu-ve-viec-viet-mot-spidessay.md)
+- [Sự phản khoa học của chiêm tinh học](content/su-phan-khoa-hoc-cua-chiem-tinh-hoc.md)
+- [Peter Jackson đã phá hoại Chúa tể những chiếc Nhẫn của Tolkien như thế nào](content/peter-jackson-a-pha-hoai-chua-te-nhung-chiec-nhan-cua-tolkien-nhu-the-nao.md)
+- [[Homo Scachorum] Khám nghiệm tâm lí Bobby Fischer (Phần 2/2), Joseph G. Ponterotto, Nguyễn Tuấn Linh dịch](content/homo-scachorum-kham-nghiem-tam-li-bobby-fischer-phan-22-joseph-g-ponterotto-nguyen-tuan-linh-dich.md)
+- [TTTN — Ngũ-vị có ngu ngốc khi từ chối cháo khoai?](content/tttn-ngu-vi-co-ngu-ngoc-khi-tu-choi-chao-khoai.md)
+- [No Nut November: Con rối bị giật dây bởi các cộng đồng ám ảnh tình dục](content/no-nut-november-con-roi-bi-giat-day-boi-cac-cong-ong-am-anh-tinh-duc.md)
+- [Alpha male: Sự đói gái của tư duy sát gái](content/alpha-male-su-oi-gai-cua-tu-duy-sat-gai.md)
+- [[Homo Scachorum] Paul Morphy dưới góc nhìn Phân tâm học (Phần 2/4)](content/homo-scachorum-paul-morphy-duoi-goc-nhin-phan-tam-hoc-phan-24.md)
+- [Văn học hiện thực và những ca ngộ độc tinh thần](content/van-hoc-hien-thuc-va-nhung-ca-ngo-oc-tinh-than.md)
+- [Trăm cái lí không bằng tí cái tình: Mánh lới của Trạng Tí từ truyện cho đến đời](content/tram-cai-li-khong-bang-ti-cai-tinh-manh-loi-cua-trang-ti-tu-truyen-cho-en-oi.md)
+- [[Homo Scachorum] Giỏi cờ vua hơn không đồng nghĩa với thông minh hơn](content/homo-scachorum-gioi-co-vua-hon-khong-ong-nghia-voi-thong-minh-hon.md)
+- [Từ miếng ăn đến cái đọc - Sự thô tục len lỏi vào mọi ngõ ngách đời sống](content/tu-mieng-an-en-cai-oc-su-tho-tuc-len-loi-vao-moi-ngo-ngach-oi-song.md)
+- [[Homo Scachorum] Paul Morphy dưới góc nhìn Phân tâm học (Phần 1/4)](content/homo-scachorum-paul-morphy-duoi-goc-nhin-phan-tam-hoc-phan-14.md)
+- [Những điều phản văn hóa trong văn hóa đọc ở Việt Nam](content/nhung-ieu-phan-van-hoa-trong-van-hoa-oc-o-viet-nam.md)
+- [Đắc nhân tâm: Một nửa sự thật là toàn bộ dối trá](content/ac-nhan-tam-mot-nua-su-that-la-toan-bo-doi-tra.md)
+- [Nghịch lí thời bình: Có lí nào vừa muốn trừng phạt man rợ, vừa muốn xã hội yên bình?](content/nghich-li-thoi-binh-co-li-nao-vua-muon-trung-phat-man-ro-vua-muon-xa-hoi-yen-binh.md)
+- [Cờ vua và cờ tướng: Một so sánh tử tế](content/co-vua-va-co-tuong-mot-so-sanh-tu-te.md)
+- [Học giải ngụy biện chỉ làm rác cuộc tranh luận & 4 quy tắc logic](content/hoc-giai-nguy-bien-chi-lam-rac-cuoc-tranh-luan-4-quy-tac-logic.md)
+- [Bức họa Dorian Gray: Khoái Lạc, Cái Đẹp và Minh Triết](content/buc-hoa-dorian-gray-khoai-lac-cai-ep-va-minh-triet.md)
+- [[Homo Scachorum] Cờ vua dưới tư cách một huyền sử bên lề chính sử](content/homo-scachorum-co-vua-duoi-tu-cach-mot-huyen-su-ben-le-chinh-su.md)
+- [Cậu Vàng: Thời đại “Thượng Đế” trở thành một lũ hề](content/cau-vang-thoi-ai-thuong-e-tro-thanh-mot-lu-he.md)
+- [Trò hề đạo đức mang tên Cấm Phá Thai](content/tro-he-ao-uc-mang-ten-cam-pha-thai.md)
+- [Phiên âm tên và sự Mặc cảm Ngôn ngữ của các bạn trẻ](content/phien-am-ten-va-su-mac-cam-ngon-ngu-cua-cac-ban-tre.md)
+- [[Homo Scachorum] Paul Morphy dưới góc nhìn Phân tâm học (Phần 3/4)](content/homo-scachorum-paul-morphy-duoi-goc-nhin-phan-tam-hoc-phan-34.md)
+- [“Nghèo thì đừng đẻ”: Sự va chạm tất yếu giữa hai luồng tư tưởng cũ mới](content/ngheo-thi-ung-e-su-va-cham-tat-yeu-giua-hai-luong-tu-tuong-cu-moi.md)

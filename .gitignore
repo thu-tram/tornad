@@ -3,3 +3,4 @@ epub.css
 fetch-images.py
 Makefile
 metadata.yaml
+gen_post_list.py
